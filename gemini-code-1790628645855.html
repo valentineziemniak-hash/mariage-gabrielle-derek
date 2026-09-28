@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu et Carte des Vins - #Terroir</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
+
+        :root {
+            --cream: #FAF6F0;
+            --burgundy: #6B1A24;
+            --text-dark: #2C2C2C;
+            --text-light: #5A5A5A;
+            --gold: #C5A059;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--burgundy);
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .menu-section {
+            background-color: #fff;
+            border: 1px solid #E5DCC5;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(107, 26, 36, 0.05);
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            margin-bottom: 25px;
+        }
+
+        .menu-item h4 {
+            color: var(--text-dark);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .wine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .wine-card {
+            background-color: transparent;
+            border: 1px solid var(--gold);
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-5px);
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .wine-title {
+            font-size: 1.5em;
+            color: var(--burgundy);
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .wine-region {
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .wine-cepage {
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .wine-details {
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .tasting-notes {
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px solid #E5DCC5;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.8em;
+            color: var(--text-light);
+            border-top: 1px solid #E5DCC5;
+        }
+        
+        .pdf-reference {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--burgundy);
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2.2em; }
+            .menu-section h2 { font-size: 2em; }
+            .menu-section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Votre Repas #Terroir</h1>
+        <p>Une sélection de mets raffinés et de vins d'exception</p>
+    </div>
+
+    <!-- FOOD MENU SECTION -->
+    <div class="menu-section">
+        <h2>Menu</h2>
+        
+        <div class="menu-item">
+            <h3>Entrée</h3>
+            <h4>Arancini d'orge biologique aux champignons sauvages</h4>
+            <p>OU</p>
+            <h4>Tartare de bœuf</h4>
+        </div>
+
+        <div class="menu-item">
+            <h3>Repas</h3>
+            <h4>Poitrine de poulet sauce aux morilles</h4>
+            <p>OU</p>
+            <h4>Omble chevalier sauce pesto à la fleur d'ail</h4>
+        </div>
+
+        <div class="menu-item">
+            <h3>Dessert</h3>
+            <h4>Tarte aux bleuets</h4>
+        </div>
+    </div>
+
+    <!-- WINE LIST SECTION -->
+    <div class="header" style="border: none; margin-bottom: 30px;">
+        <h2>Carte des Vins</h2>
+    </div>
+
+    <div class="wine-grid">
+        <!-- Wine 1 -->
+        <div class="wine-card">
+            <div class="wine-title">Crémant du Jura</div>
+            <div class="wine-region">Jura | Champ Divin | Zéro Dosage</div>
+            <div class="wine-cepage">Chardonnay, Savagnin et Pinot Noir</div>
+            <div class="wine-details">
+                Jaune pâle, reflets dorés<br>
+                Citron, pomme verte, fleurs blanches, pain grillé<br>
+                Vive, précise, fraîche, tension minérale
+            </div>
+            <div class="tasting-notes">
+                Les bulles sont fines et persistantes, tandis que le nez offre des arômes de citron, de pomme verte, de fleurs blanches et de pain grillé. La bouche est vive, précise et d'une grande fraîcheur, portée par une belle tension minérale.
+            </div>
+        </div>
+
+        <!-- Wine 2 -->
+        <div class="wine-card">
+            <div class="wine-title">Le Vent dans les Saules</div>
+            <div class="wine-region">Anjou AOP | Le Pas Saint-Martin</div>
+            <div class="wine-cepage">Chenin Blanc Bio</div>
+            <div class="wine-details">
+                Jaune pâle, reflets dorés<br>
+                Poire, pomme, citron, fleurs blanches<br>
+                Vif, frais, sec, salin, tendu
+            </div>
+            <div class="tasting-notes">
+                Un chenin blanc lumineux et précis, où la fraîcheur et la minéralité s'expriment avec élégance. Une cuvée tout en finesse, idéale à l'apéritif ou avec les fruits de mer, poissons et fromages de chèvre.
+            </div>
+        </div>
+
+        <!-- Wine 3 -->
+        <div class="wine-card">
+            <div class="wine-title">Vereinter Schatz</div>
+            <div class="wine-region">Austria | Arndorfer</div>
+            <div class="wine-cepage">Grüner Veltliner, Riesling</div>
+            <div class="wine-details">
+                Jaune pâle, reflets verts<br>
+                Citron, pomme verte, fruits à noyau, poivre blanc<br>
+                Frais, équilibré, désaltérant, finale nette et minérale
+            </div>
+            <div class="tasting-notes">
+                Un assemblage autrichien frais et expressif qui allie le caractère épicé du Grüner Veltliner à la vivacité du Riesling. En bouche, l'équilibre entre fraîcheur, fruit et tension en fait un vin particulièrement désaltérant.
+            </div>
+        </div>
+
+        <!-- Wine 4 -->
+        <div class="wine-card">
+            <div class="wine-title">Palmento Bianco</div>
+            <div class="wine-region">Etna DOC | Vino di Anna</div>
+            <div class="wine-cepage">Carricante, Inzolia, Grecanic, Catarratto</div>
+            <div class="wine-details">
+                Jaune pâle, reflets verts<br>
+                Agrumes, pêche blanche, herbes méditerranéennes, touche fumée<br>
+                Droite, saline, énergique, minéralité volcanique
+            </div>
+            <div class="tasting-notes">
+                Issu des sols volcaniques de l'Etna, ce blanc sicilien offre une personnalité remarquable. La bouche est droite, saline et énergique, soutenue par une minéralité volcanique qui apporte beaucoup de profondeur.
+            </div>
+        </div>
+
+        <!-- Wine 5 -->
+        <div class="wine-card">
+            <div class="wine-title">La Côte du Vaux</div>
+            <div class="wine-region">Coteaux Bourguignons | Domaine d'Edouard</div>
+            <div class="wine-cepage">Pinot Noir</div>
+            <div class="wine-details">
+                Rouge rubis, limpide<br>
+                Cerise, framboise, fraise, épices<br>
+                Fruité, souple, frais, léger
+            </div>
+            <div class="tasting-notes">
+                Un vin gourmand et accessible qui met en valeur la finesse de la Bourgogne. En bouche, les tanins sont souples, l'acidité bien équilibrée et la finale offre une agréable note épicée. Un vin tout en fraîcheur !
+            </div>
+        </div>
+
+        <!-- Wine 6 -->
+        <div class="wine-card">
+            <div class="wine-title">El Tiempo</div>
+            <div class="wine-region">DO Montsant | Joan d'Anguera</div>
+            <div class="wine-cepage">Grenache, Carignan</div>
+            <div class="wine-details">
+                Rouge rubis profond<br>
+                Cerise noire, prune, mûre, réglisse, garrigue<br>
+                Ample, fruité, velouté, épicé, frais
+            </div>
+            <div class="tasting-notes">
+                Un rouge généreux qui reflète le caractère ensoleillé du Montsant. Le vin est ample, velouté et équilibré par une fraîcheur qui apporte beaucoup de buvabilité. Les tanins sont mûrs et la finale est longue.
+            </div>
+        </div>
+
+        <!-- Wine 7 -->
+        <div class="wine-card">
+            <div class="wine-title">Domaine du Chêne Vert</div>
+            <div class="wine-region">Crozes-Hermitage AOP | M. Rochas & J. Colin</div>
+            <div class="wine-cepage">Syrah (2022)</div>
+            <div class="wine-details">
+                Rouge pourpre<br>
+                Mûre, cassis, violette, poivre<br>
+                Fruité rouge, épicé, souple, structuré
+            </div>
+            <div class="tasting-notes">
+                Une syrah élégante qui exprime toute la fraîcheur du nord de la vallée du Rhône. La bouche est structurée sans excès, portée par des tanins fins et une belle tension qui prolonge les saveurs de fruits noirs et d'épices.
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Veuillez consommer avec modération.</p>
+        <p class="pdf-reference">Inspiré du document original : <strong>Affiche Beaujolais Nouveau en Crème et Rouge bordeaux Illustration Elégant Rétro.pdf</strong></p>
+    </div>
+</div>
+
+</body>
+</html>
